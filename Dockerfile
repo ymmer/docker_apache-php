@@ -31,7 +31,10 @@ EXPOSE 80
 ADD www /var/www/html
 ADD 000-default.conf /etc/apache2/sites-enabled/000-default.conf
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+ADD run.sh /run.sh
+RUN chmod u+x /run.sh
 
-VOLUME ["/var/www/html/", "/var/log/"]
+#VOLUME ["/var/www/html/", "/var/log/"]
 
-CMD ["exec supervisord -n"]
+#CMD ["exec supervisord -n"]
+CMD ["/run.sh"]
