@@ -1,4 +1,11 @@
-# docker_apache-php
-small container using supervisord to run php-based app on apache
+# docker container for apache2php7
 
-created an own small docker container to test-run php apps. no db link yet.
+small docker container using supervisord to test-run php apps. no db link yet.
+
+## usage
+
+to build:
+`docker build -t ymmer/apache2php7:1.0 .`
+
+to run:
+`docker run -p 8000:80  -m 512m --name="myApp" -d ymmer/apache2php7:1.0`
