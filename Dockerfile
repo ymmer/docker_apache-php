@@ -34,4 +34,4 @@ ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 VOLUME ["/var/www/html/", "/var/log/"]
 
-CMD ["/run.sh"]
+CMD ["exec supervisord -n"]
